@@ -8,21 +8,24 @@ aktueller_spieler = "X"
 
 
 def spieler_zieht():
-    try:
-        feld = int(input("In welches Feld von 1 - 9?"))
-    except ValueError:
-        print("Bitte eine Zahl")
-        spieler_zieht()
-    if feld in range(1, 10):
-        if Spielfeld[feld-1] == "":
-            Spielfeld[feld-1] = aktueller_spieler
+    while True:
+        try:
+            feld = int(input("In welches Feld von 1 - 9?"))
+        except ValueError:
+            print("Bitte eine Zahl")
+            continue
 
+        if feld in range(1, 10):
+            if Spielfeld[feld-1] == "":
+                Spielfeld[feld-1] = aktueller_spieler
+                break
+
+            else:
+                print("Feld belegt")
+                
         else:
-            print("Feld belegt")
-            spieler_zieht()
-    else:
-        print("Feld existiert nicht")
-        spieler_zieht() 
+            print("Feld existiert nicht")
+             
 
 
 
