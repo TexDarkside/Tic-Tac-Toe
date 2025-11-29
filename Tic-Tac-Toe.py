@@ -52,7 +52,6 @@ def spieler_gewinnt():
         c = Spielfeld[kombination[2]]
 
         if a == b == c and a != "":
-            print(f"Aktueller Spieler {a} gewinnt")
             return a
 
 
